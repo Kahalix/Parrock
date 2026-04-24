@@ -1,0 +1,132 @@
+# =========================
+# General / OS / editors
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+*.swp
+*.swo
+*~
+*.tmp
+*.bak
+*.orig
+*.rej
+
+.vscode/
+.idea/
+*.code-workspace
+
+# =========================
+# STM32CubeIDE / Eclipse
+# =========================
+.metadata/
+*.launch
+
+Debug/
+Release/
+build/
+_build/
+cmake-build-*/
+
+# Generated STM32 artifacts
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
+*.list
+*.su
+*.o
+*.d
+*.obj
+*.a
+*.lib
+*.axf
+
+# Keep these committed:
+#   *.ioc
+#   .project
+#   .cproject
+#   .settings/
+
+# =========================
+# ESP-IDF / ESP32
+# =========================
+esp-idf/build/
+build/
+managed_components/
+sdkconfig.old
+compile_commands.json
+
+# If you keep multiple ESP-IDF projects, ignore nested build dirs too
+**/build/
+
+# Keep these committed:
+#   sdkconfig
+#   CMakeLists.txt
+#   main/CMakeLists.txt
+#   main/*.c
+#   main/*.cpp
+#   components/**
+
+# =========================
+# Yocto / BitBake
+# =========================
+# Ignore Yocto build outputs, not your layer/source files
+yocto/build-*/
+yocto/build/
+yocto/tmp/
+yocto/sstate-cache/
+yocto/downloads/
+yocto/cache/
+
+# BitBake artifacts
+*.rootfs
+*.wic
+*.wic.bz2
+*.sdimg
+*.ext4
+*.tar.bz2
+*.manifest
+*.spdx.json
+
+# Keep these committed:
+#   meta-*/**
+#   conf/*.conf.example
+#   conf/*.sample
+#   recipes-*/**
+#   *.bb
+#   *.bbappend
+#   *.inc
+#   layer.conf
+
+# =========================
+# Logs / dumps / temp files
+# =========================
+*.log
+*.pid
+*.core
+core
+core.*
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# =========================
+# Node / frontend if ever added
+# =========================
+node_modules/
+dist/
+coverage/
