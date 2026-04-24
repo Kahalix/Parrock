@@ -1,132 +1,28 @@
-# =========================
-# General / OS / editors
-# =========================
-.DS_Store
-Thumbs.db
-desktop.ini
+## License
 
-*.swp
-*.swo
-*~
-*.tmp
-*.bak
-*.orig
-*.rej
+This repository contains original code as well as third-party components.
 
-.vscode/
-.idea/
-*.code-workspace
+### Original Project Code
+All original source code written specifically for this repository is licensed under the MIT License, unless otherwise stated in the source files.
 
-# =========================
-# STM32CubeIDE / Eclipse
-# =========================
-.metadata/
-*.launch
+### STMicroelectronics Components (STM32 / STM32CubeF1)
+This project may include software components from STMicroelectronics, including but not limited to STM32 HAL, CMSIS device files, and related middleware.
 
-Debug/
-Release/
-build/
-_build/
-cmake-build-*/
+These components are distributed under their respective license terms, which may include:
+- Apache License 2.0
+- BSD 3-Clause License
+- MIT License
+- STMicroelectronics Software License Agreement (SLA0048) and additional license terms
 
-# Generated STM32 artifacts
-*.elf
-*.bin
-*.hex
-*.map
-*.lst
-*.list
-*.su
-*.o
-*.d
-*.obj
-*.a
-*.lib
-*.axf
+The original copyright notices and license headers for these files are preserved.
 
-# Keep these committed:
-#   *.ioc
-#   .project
-#   .cproject
-#   .settings/
+### Espressif Components (ESP-IDF / ESP32)
+This project may include software components from Espressif Systems and the ESP-IDF framework.
 
-# =========================
-# ESP-IDF / ESP32
-# =========================
-esp-idf/build/
-build/
-managed_components/
-sdkconfig.old
-compile_commands.json
+ESP-IDF original source code is licensed under the Apache License 2.0, and some third-party components included in ESP-IDF are distributed under compatible permissive licenses. The original copyright notices and license headers for these files are preserved.
 
-# If you keep multiple ESP-IDF projects, ignore nested build dirs too
-**/build/
+### Third-Party Notices
+All third-party software remains subject to its own license terms. In case of any conflict, the license terms in the source files and official vendor documentation take precedence.
 
-# Keep these committed:
-#   sdkconfig
-#   CMakeLists.txt
-#   main/CMakeLists.txt
-#   main/*.c
-#   main/*.cpp
-#   components/**
-
-# =========================
-# Yocto / BitBake
-# =========================
-# Ignore Yocto build outputs, not your layer/source files
-yocto/build-*/
-yocto/build/
-yocto/tmp/
-yocto/sstate-cache/
-yocto/downloads/
-yocto/cache/
-
-# BitBake artifacts
-*.rootfs
-*.wic
-*.wic.bz2
-*.sdimg
-*.ext4
-*.tar.bz2
-*.manifest
-*.spdx.json
-
-# Keep these committed:
-#   meta-*/**
-#   conf/*.conf.example
-#   conf/*.sample
-#   recipes-*/**
-#   *.bb
-#   *.bbappend
-#   *.inc
-#   layer.conf
-
-# =========================
-# Logs / dumps / temp files
-# =========================
-*.log
-*.pid
-*.core
-core
-core.*
-
-# =========================
-# Python
-# =========================
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-.venv/
-venv/
-env/
-
-# =========================
-# Node / frontend if ever added
-# =========================
-node_modules/
-dist/
-coverage/
+### Warranty Disclaimer
+This software is provided "as is", without warranty of any kind, express or implied.
