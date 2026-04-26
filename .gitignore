@@ -107,7 +107,6 @@ yocto/cache/
 *.log
 *.pid
 *.core
-core
 core.*
 
 # =========================
