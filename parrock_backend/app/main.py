@@ -69,7 +69,8 @@ async def upload_audio(request: Request):
 
     total = 0
     try:
-        # Pętla async for chunk in request.stream() natywnie rozumie HTTP Chunked
+        # Process the incoming stream in chunks to avoid loading
+        # the entire payload into the server's RAM at once (OOM protection).
         with latest_path.open("wb") as latest_f, timestamped_path.open("wb") as ts_f:
             async for chunk in request.stream():
                 if not chunk:
