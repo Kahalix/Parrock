@@ -45,7 +45,7 @@ The system is built around a **master-slave dual-MCU architecture** designed to 
 
 ## Hardware Requirements and Wiring Guide
 
-### Architecture Diagram
+### HIGH-LEVEL Architecture Diagram
 
 ```mermaid
 flowchart TD
@@ -113,19 +113,22 @@ To prevent MCU resets during heavy audio playback or LED usage, the power is div
 
 | Component | Power | Signal Connections | Notes |
 |---|---|---|---|
-| Micro SD | 3V3 / GND | CS → **D4**, MOSI → **D23**, MISO → **D19**, CLK → **D18** | SPI storage |
-| MAX98357A | VIN / GND | LRC → **D25**, BCLK → **D26**, DIN → **D22**, GAIN → **GND**, SD → **3.3V** | Powered from **V_RAW** |
-| INMP441 | VDD / GND | L/R → **GND**, SCK → **D14**, WS → **D15**, SD → **D32** | Digital I2S microphone |
+| Micro SD | 3V3 / GND | CS → **GPIO4**, MOSI → **GPIO23**, MISO → **GPIO19**, CLK → **GPIO18** | SPI storage |
+| MAX98357A | VIN / GND | LRC → **GPIO25**, BCLK → **GPIO26**, DIN → **GPIO22**, GAIN → **GND**, SD → **3.3V** | Powered from **V_RAW** |
+| INMP441 | VDD / GND | L/R → **GND**, SCK → **GPIO27**, WS → **GPIO21**, SD → **GPIO32** | Digital I2S microphone |
 
 ### 4. Inter-Board Bridge - STM32 ⇄ ESP32
 
 For communication between both boards:
 
 - **Wake Line:** STM32 **PA2** (`WAKE_ESP_Pin`) → ESP32 **GPIO 33**  
-  Wakes the ESP32 from deep sleep using `ext0`.
+  Active-high level signal used to wake ESP32 from deep sleep via `ext0` wake source.  
+  WAKE line is active-high and used to trigger ESP32 wake-up from deep sleep (ext0). It may remain HIGH during handshake, but ESP32 does not require it to stay high after wake-up unless enforced by firmware logic.
+  
 - **UART Communication (115200 baud):**
   - STM32 **PA9** (TX) → ESP32 **RX2**
-  - STM32 **PA10** (RX) → ESP32 **TX2**
+  - STM32 **PA10** (RX) → ESP32 **TX2**   
+  ESP32 uses UART2 mapped to GPIO16 (RX2) and GPIO17 (TX2).
 
 ---
 
